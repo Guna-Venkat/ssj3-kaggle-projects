@@ -62,6 +62,126 @@ titanic_classification/
 │   ├── ├── gender_submission.csv
 ├── outputs/
 │   ├── submission.csv
-│   ├── visualizations/
+│   ├── EDA1.png
+|   ├── ...
 ├── README.md
 ```
+
+
+---
+
+## 📊 Exploratory Data Analysis (EDA)
+
+### ✅ Data Overview
+
+- **Target**: `Survived` (0 = No, 1 = Yes)
+- Features include: `Pclass`, `Sex`, `Age`, `SibSp`, `Parch`, `Fare`, `Cabin`, `Embarked`, etc.
+
+### 📌 Null Value Handling
+
+| Column     | % Missing | Imputation Strategy                                 |
+|------------|-----------|-----------------------------------------------------|
+| `Age`      | ~20%      | Filled using median per `Pclass` and `Sex` group    |
+| `Cabin`    | ~77%      | Extracted deck letter (`Cabin_Deck`) & filled by mode within (`Pclass`, `Survived`) group |
+| `Embarked` | 2 rows    | Filled using mode within (`Pclass`, `Sex`, `Survived`) group |
+
+### 🧪 Key Feature Engineering
+
+- **`Cabin_Deck`** extracted from `Cabin`, converted to category.
+- **`FamilySize`** = `SibSp` + `Parch` + 1
+- Dropped irrelevant features: `Name`, `Ticket`, `Cabin` (after deck extraction)
+
+---
+
+## 📈 Visualizations
+
+### Age vs Survival Distribution by Class  
+![EDA1](./outputs/EDA1.png)
+
+### Age Distribution Histogram  
+![EDA2](./outputs/EDA2.png)
+
+### Correlation Heatmap  
+![Correlation](./outputs/EDA_Correlation_Table.png)
+
+### Decision Tree Flow  
+![Decision Tree Flow](./outputs/DecisionTreeFlow.png)
+
+### Model Performance Comparison  
+![Model Comparison](./outputs/ModelPerformanceComparison.png)
+
+---
+
+## 🤖 Models Compared
+
+| Model               | Accuracy | Precision | Recall | F1 Score |
+|--------------------|----------|-----------|--------|----------|
+| Logistic Regression| 0.9497   | 0.9545    | 0.9130 | **0.9333** ✅ Best |
+| Decision Tree       | 0.8939   | 0.8472    | 0.8841 | 0.8652   |
+| Random Forest       | 0.9090   | 0.9056    | 0.8793 | 0.8922   |
+| XGBoost             | 0.9220   | 0.9245    | 0.8965 | 0.9103   |
+| SVC (RBF Kernel)    | 0.9100   | 0.9080    | 0.8724 | 0.8898   |
+| K-Nearest Neighbors | 0.8780   | 0.8123    | 0.8442 | 0.8279   |
+
+---
+
+## ⚙️ Modeling Approach
+
+- **Train-Test Split** on cleaned dataset
+- **Scaling** using StandardScaler (essential for Logistic Regression, SVC, KNN)
+- **Hyperparameter Tuning**:
+  - GridSearchCV for Decision Tree & Random Forest
+  - Elbow Method for KNN (`k=3` chosen)
+- **Model Evaluation** on validation set
+- **Helper Functions** to store metrics: Accuracy, Precision, Recall, F1
+
+---
+
+## 🏆 Final Result
+
+- ✅ **Best Model**: Logistic Regression (after scaling)
+- ✅ Submitted to Kaggle
+- 🧾 **Kaggle Score**: **`0.631`** (Public Leaderboard)
+
+---
+
+## 📤 Submission Format
+
+```csv
+PassengerId,Survived
+892,0
+893,1
+...
+```
+
+---
+
+---
+
+## 🛠️ Future Work
+
+- Add **SHAP-based interpretation** for the Logistic Regression model  
+- Explore **feature importance visualizations** across models  
+- Implement **model stacking/blending** for final ensemble  
+- Apply **AutoML or Optuna** for advanced hyperparameter tuning  
+- Enhance missing value handling using **KNNImputer** or **IterativeImputer**
+
+---
+
+## 📚 Learnings
+
+- EDA is essential for driving feature engineering  
+- Logistic Regression can outperform complex models when data is well-prepared  
+- Scaling is crucial for models sensitive to feature magnitude  
+- Visual Decision Trees help interpret model flow and logic (DT/RF)
+
+---
+
+## ✍️ Author
+
+- **Name**: Guna Venkat Doddi  
+- **Project**: Part of `SSJ3-Kaggle-Projects` repository  
+- **Contact**: [GitHub](https://github.com/Guna-Venkat)
+
+---
+
