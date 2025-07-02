@@ -54,7 +54,7 @@ On April 15, 1912, the Titanic tragically sank, taking 1502 out of 2224 lives. W
 titanic_classification/
 ├── notebooks/
 │   ├── 01_data_exploration.ipynb
-│   ├── 03_modeling.ipynb
+│   ├── 02_modeling.ipynb
 ├── data/
 │   ├── raw/
 │   ├── ├── train.csv
