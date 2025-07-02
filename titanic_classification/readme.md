@@ -44,8 +44,8 @@ On April 15, 1912, the Titanic tragically sank, taking 1502 out of 2224 lives. W
 ## 🔍 Tools & Libraries
 
 - `pandas`, `numpy`, `matplotlib`, `seaborn`
-- `scikit-learn`, `xgboost`
-- `plotly` (for interactive EDA - planned)
+- `scikit-learn`, `logistic-regression`, `Decision-Trees`, `Random-Forests`, `SVMs`
+- `plotly`, `matplotlib`, `seaborn` (for interactive EDA - planned)
 - `graphviz` or `diagrams.net` (for flowchart design - planned)
 
 ## 🗂️ Folder Structure
