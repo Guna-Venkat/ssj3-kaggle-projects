@@ -44,8 +44,8 @@ On April 15, 1912, the Titanic tragically sank, taking 1502 out of 2224 lives. W
 ## 🔍 Tools & Libraries
 
 - `pandas`, `numpy`, `matplotlib`, `seaborn`
-- `scikit-learn`, `xgboost`
-- `plotly` (for interactive EDA - planned)
+- `scikit-learn`, `logistic-regression`, `Decision-Trees`, `Random-Forests`, `SVMs`
+- `plotly`, `matplotlib`, `seaborn` (for interactive EDA - planned)
 - `graphviz` or `diagrams.net` (for flowchart design - planned)
 
 ## 🗂️ Folder Structure
@@ -54,12 +54,12 @@ On April 15, 1912, the Titanic tragically sank, taking 1502 out of 2224 lives. W
 titanic_classification/
 ├── notebooks/
 │   ├── 01_data_exploration.ipynb
-│   ├── 02_feature_engineering.ipynb
-│   ├── 03_modeling.ipynb
+│   ├── 02_modeling.ipynb
 ├── data/
-│   ├── train.csv
-│   ├── test.csv
-│   ├── gender_submission.csv
+│   ├── raw/
+│   ├── ├── train.csv
+│   ├── ├── test.csv
+│   ├── ├── gender_submission.csv
 ├── outputs/
 │   ├── submission.csv
 │   ├── visualizations/
