@@ -2,6 +2,9 @@
 
 Welcome aboard one of the most iconic beginner-friendly machine learning challenges — **Titanic: ML from Disaster**. This repository contains my end-to-end exploration and model development for the Kaggle Titanic competition, as part of my **SSJ3-ML-Journey**.
 
+
+🔗 [Kaggle Competition Page](https://www.kaggle.com/competitions/titanic/overview)
+
 ## 🎯 Objective
 
 Predict which passengers survived the Titanic shipwreck using supervised classification techniques. The model learns from the **training dataset** (`train.csv`) and makes predictions on the **test dataset** (`test.csv`).
