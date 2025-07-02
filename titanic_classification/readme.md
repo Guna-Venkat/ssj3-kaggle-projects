@@ -1,9 +1,13 @@
 # 🚢 Titanic - Machine Learning from Disaster
+<p align="center">
+  <a href="https://www.kaggle.com/competitions/titanic/overview">
+    <img src="https://img.shields.io/badge/Kaggle-Titanic_Competition-blue?style=for-the-badge&logo=kaggle&logoColor=white" alt="Kaggle Titanic Competition"/>
+  </a>
+</p>
+
 
 Welcome aboard one of the most iconic beginner-friendly machine learning challenges — **Titanic: ML from Disaster**. This repository contains my end-to-end exploration and model development for the Kaggle Titanic competition, as part of my **SSJ3-ML-Journey**.
 
-
-🔗 [Kaggle Competition Page](https://www.kaggle.com/competitions/titanic/overview)
 
 ## 🎯 Objective
 
