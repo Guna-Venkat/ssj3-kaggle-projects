@@ -1,7 +1,7 @@
 # 🏡 House Prices - Advanced Regression Techniques
 <p align="center">
   <a href="https://www.kaggle.com/competitions/house-prices-advanced-regression-techniques">
-    <img src="https://img.shields.io/badge/Kaggle-Titanic_Competition-blue?style=for-the-badge&logo=kaggle&logoColor=white" alt="House Prices Competition"/>
+    <img src="https://img.shields.io/badge/Kaggle-House_Prices_Competition-blue?style=for-the-badge&logo=kaggle&logoColor=white" alt="House Prices Competition"/>
   </a>
 </p>
 
