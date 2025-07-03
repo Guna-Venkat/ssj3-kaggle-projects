@@ -5,7 +5,6 @@
   </a>
 </p>
 
-
 Welcome to my second Kaggle project in the **SSJ3-ML-Journey** series! This competition is focused on **predicting house prices** using advanced regression techniques and **creative feature engineering** with real-world data from Ames, Iowa.
 
 ---
@@ -41,70 +40,101 @@ To build a regression model that accurately predicts the **SalePrice** of homes 
 | `LotFrontage`  | Linear feet of street connected to property      |
 | `BsmtQual`     | Height of basement                               |
 
-Full feature list can be found in `data_description.txt`.
+Full feature list can be found in `data/data_description.txt`.
 
 ---
 
 ## 🧪 Planned Workflow
 
-- ✅ Data Loading and Cleaning
-- ✅ Missing Value Treatment
-- ✅ Exploratory Data Analysis (EDA)
-- ✅ Feature Engineering
-- ✅ Data Transformation (scaling, encoding)
-- ✅ Model Training (Linear, Ridge, Lasso, RF, XGBoost)
-- ✅ Hyperparameter Tuning (GridSearchCV / Optuna)
-- ✅ Model Evaluation (MAE, RMSE, R²)
-- ✅ Kaggle Submission
+- ✅ Data Loading and Cleaning  
+- ✅ Missing Value Treatment  
+- ✅ Exploratory Data Analysis (EDA)  
+- ✅ Feature Engineering  
+- ✅ Data Transformation (scaling, encoding)  
+- ✅ Model Training (Linear, Ridge, Lasso, RF, XGBoost)  
+- ✅ Hyperparameter Tuning (GridSearchCV / Optuna)  
+- ✅ Model Evaluation (MAE, RMSE, R²)  
+- ✅ Kaggle Submission  
 
 ---
 
 ## 📚 Key Skills Practiced
 
-- 🧠 **Creative Feature Engineering**
-- 📏 **Regression Modeling & Tuning**
-- 🧹 **Smart Missing Value Imputation**
-- 📊 **Statistical EDA + Visual Insights**
-- 🛠️ **Model Evaluation & Ensemble Approaches**
+- 🧠 **Creative Feature Engineering**  
+- 📏 **Regression Modeling & Tuning**  
+- 🧹 **Smart Missing Value Imputation**  
+- 📊 **Statistical EDA + Visual Insights**  
+- 🛠️ **Model Evaluation & Ensemble Approaches**  
 
 ---
 
-## 🧪 Exploratory Data Analysis (Planned Sections)
+## 📸 Key Visualizations
 
-> _To be updated as the project progresses._
+<p align="center">
+  <img src="outputs/Correlation_Heatmap.png" alt="Correlation Heatmap" width="600"/>
+  <br/><em>Correlation Heatmap of Numeric Features</em>
+</p>
 
-- 🔍 Distribution of `SalePrice` (target)
-- 🔁 Correlation heatmap of numerical features
-- 🧱 Feature impact analysis: `OverallQual`, `GrLivArea`, `Neighborhood`, etc.
-- ❌ Outlier detection
-- 🎛️ Skewness and log transformations
-- 📐 Feature selection based on VIF & correlation
+<p align="center">
+  <img src="outputs/Missing_Value_Distribution.png" alt="Missing Value Distribution" width="600"/>
+  <br/><em>Distribution of Missing Values</em>
+</p>
 
----
+<p align="center">
+  <img src="outputs/Top_15_Features.png" alt="Top 15 Features" width="600"/>
+  <br/><em>Top 15 Most Important Features (XGBoost)</em>
+</p>
 
-## 📈 Modeling Approach
+<p align="center">
+  <img src="outputs/Prediction_vs_Actual.png" alt="Predicted vs Actual" width="600"/>
+  <br/><em>Predicted vs Actual Sale Prices</em>
+</p>
 
-> _To be updated with results later._
+<p align="center">
+  <img src="outputs/Residuals_Plot.png" alt="Residuals Plot" width="600"/>
+  <br/><em>Model Residuals</em>
+</p>
 
-| Model        | MAE   | RMSE  | R² Score |
-|--------------|-------|-------|----------|
-| LinearReg    | TBD   | TBD   | TBD      |
-| Ridge        | TBD   | TBD   | TBD      |
-| Lasso        | TBD   | TBD   | TBD      |
-| XGBoost      | TBD   | TBD   | TBD      |
-| StackedModel | TBD   | TBD   | TBD      |
+<p align="center">
+  <img src="outputs/Model_Comparsion.png" alt="Model Comparison" width="600"/>
+  <br/><em>Model Performance Comparison</em>
+</p>
 
 ---
 
 ## 📊 Visualizations
 
-> _To be added here:_
+> 🔍 Click to view each image for insights generated throughout the project.
 
-- `EDA_SalePrice_Distribution.png`
-- `Correlation_Heatmap.png`
-- `Feature_Importance_XGBoost.png`
-- `Prediction_vs_Actual.png`
-- `Residuals_Plot.png`
+| Visualization                      | File Name                      |
+|------------------------------------|---------------------------------|
+| 🔥 Correlation Heatmap             | `outputs/Correlation_Heatmap.png`       |
+| 🧱 Missing Value Distribution       | `outputs/Missing_Value_Distribution.png`|
+| 🥇 Top 15 Features                 | `outputs/Top_15_Features.png`           |
+| 📉 Residuals of Predictions        | `outputs/Residuals_Plot.png`            |
+| 🧪 Actual vs Predicted             | `outputs/Prediction_vs_Actual.png`      |
+| 🧠 Model Comparison Bar Chart      | `outputs/Model_Comparsion.png`          |
+
+All images are stored in the project folder for quick analysis and comparison.
+
+---
+
+## 📊 Model Comparison
+
+| Model                  | MAE         | RMSE        | R² Score |
+|------------------------|-------------|-------------|----------|
+| Linear Regression      | 22,031.55   | 33,276.75   | 0.8354   |
+| Polynomial Ridge       | 22,176.64   | 33,696.69   | 0.8312   |
+| Polynomial Lasso       | 19,487.77   | 30,753.11   | 0.8594   |
+| Decision Tree (Tuned)  | 25,086.19   | 38,125.27   | 0.7839   |
+| Random Forest (Tuned)  | 17,050.17   | 28,036.24   | 0.8831   |
+| XGBoost (Tuned)        | **15,355.05** | **27,081.29** | **0.8910** |
+
+✅ Best performing individual model: **Tuned XGBoost**
+
+📌 These metrics are based on the validation set (typically 10% split).
+
+🔁 Final submission used: `outputs/stacked_submission.csv`
 
 ---
 
