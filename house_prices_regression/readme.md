@@ -1,8 +1,12 @@
 # 🏡 House Prices - Advanced Regression Techniques
+<p align="center">
+  <a href="https://www.kaggle.com/competitions/house-prices-advanced-regression-techniques">
+    <img src="https://img.shields.io/badge/Kaggle-Titanic_Competition-blue?style=for-the-badge&logo=kaggle&logoColor=white" alt="House Prices Competition"/>
+  </a>
+</p>
+
 
 Welcome to my second Kaggle project in the **SSJ3-ML-Journey** series! This competition is focused on **predicting house prices** using advanced regression techniques and **creative feature engineering** with real-world data from Ames, Iowa.
-
-🔗 [Kaggle Competition Link](https://www.kaggle.com/competitions/house-prices-advanced-regression-techniques)
 
 ---
 
@@ -137,8 +141,8 @@ Id,SalePrice
 ## ✍️ Author
 
 - **Name**: Guna Venkat Doddi  
-- **Repo**: Part of `SSJ3-Kaggle-Projects`  
-- **Profile**: [![GitHub](https://img.shields.io/badge/GitHub-Guna--Venkat-informational?style=flat&logo=github)](https://github.com/Guna-Venkat)
+- **Project**: Part of `SSJ3-Kaggle-Projects` repository  
+- **Contact**: [![GitHub - Guna Venkat Doddi](https://img.shields.io/badge/GitHub-Guna--Venkat--Doddi-black?logo=github&style=flat-square)](https://github.com/Guna-Venkat)
 
 ---
 
