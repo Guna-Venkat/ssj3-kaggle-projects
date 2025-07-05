@@ -1,132 +1,173 @@
 # 🧠 Digit Recognizer – Dimensionality Reduction + ML/DL Exploration
 
+<div align="center">
+
 [![Kaggle Competition](https://img.shields.io/badge/Kaggle-Digit%20Recognizer-20BEFF?logo=kaggle&logoColor=white)](https://www.kaggle.com/competitions/digit-recognizer/overview)
+
+</div>
 
 ---
 
-## 📌 Competition Overview
+## 🧾 Final Observations
 
-### 🎯 Goal
+| Technique                   | Val Accuracy | Kaggle Score |
+|----------------------------|--------------|--------------|
+| PCA + SVC                  | 97.50%       | 97.46%       |
+| Autoencoder + MLP          | 97.33%       | -            |
+| Segmentation + Ensemble    | 91.33%       | -            |
+| Base CNN                   | 99.10%       | 98.94%       |
+| CNN + Augmentation         | **99.60%**   | **99.38%**   |
 
-Your objective is to classify grayscale images of hand-drawn digits (0–9). The dataset used is the **classic MNIST** dataset—commonly known as the *"Hello World"* of computer vision.
+> 📌 Currently best score: **0.99332** (Augmented CNN + Transfer Learning)
 
-You’ll build models to correctly predict the digit in each image. The competition evaluates your solution based on **categorization accuracy**.
+---
+
+## 📊 Key Visualizations
+
+| Image | Description |
+|-------|-------------|
+| ![digit_distribution](visualizations/digit_distribution.png) | **Digit distribution** in training data |
+| ![sample_images_from_dataset](visualizations/sample_images_from_dataset.png) | Sample training images |
+| ![mean_image_per_class](visualizations/mean_image_per_class.png) | Mean image for each digit |
+| ![pca_classical_ml_acc_plot](visualizations/pca_classical_ml_acc_plot.png) | Accuracy vs Time for classical models |
+| ![elbow_method_optimal_k](visualizations/elbow_method_optimal_k.png) | Elbow curve to find optimal K (kMeans) |
+| ![data_after_segmentation_kmeans](visualizations/data_after_segmentation_kmeans.png) | Segmented images using KMeans |
+| ![cnn_prediction_mistakes](visualizations/cnn_prediction_mistakes.png) | Misclassified images in CNN |
+| ![cnn_hyperparameter_trails_acc_plot](visualizations/cnn_hyperparameter_trails_acc_plot.png) | Accuracy trend across hyperparameter trials |
+| ![cnn_aug_best_confusion_matrix](visualizations/cnn_aug_best_confusion_matrix.png) | Confusion matrix of best CNN model |
+
+---
+
+## 🎯 Competition Overview
+
+### Goal
+
+Classify grayscale images of hand-drawn digits (0–9). The dataset is from the **classic MNIST** challenge.
+
+> 📝 Evaluation Metric: **Categorization Accuracy**
 
 ---
 
 ## 📂 Dataset Description
 
-- **Train File**: `train.csv` – contains **785 columns**:
-  - `label`: the correct digit (0–9)
-  - `pixel0` to `pixel783`: intensity of each pixel (values from 0 to 255)
-  
-- **Test File**: `test.csv` – contains **784 columns**:
-  - `pixel0` to `pixel783`: no label, your model will predict this
-
-- Each image is **28x28 pixels**, unrolled into a 784-dimensional vector.
+- `train.csv`: 785 columns (label + 784 pixels)
+- `test.csv`: 784 pixel columns, no label
+- Image Size: **28x28 pixels**, flattened
 
 ---
 
-## 👶 Ideal Starting Point
+## 🚦 Ideal For
 
-This competition is ideal if:
-
-- You know some **Python or R**
-- You have **machine learning basics**
-- You're **new to computer vision**
-
-It’s a great opportunity to practice with:
-
-- 🧠 **Neural networks** (basic and deep)
-- 🧪 **Dimensionality reduction** (PCA, Autoencoders)
-- ⚙️ **ML techniques** like SVM, Random Forest, kNN
-- 📊 **Data visualization** and segmentation
+- Beginners in **machine learning**
+- Intermediate coders exploring **computer vision**
+- Practitioners looking to try **dimensionality reduction**, **CNNs**, **ensembles**
 
 ---
 
-## 🎯 Project-Specific Goals
+---
 
-This project is a comprehensive experimentation ground to:
+## 📌 Observations & Key Takeaways
 
-- 🔍 Reduce dimensionality with **PCA and Autoencoders**
-- 🧩 Use **image segmentation** via clustering (k-means)
-- ⚙️ Compare performance of **classical ML models** (SVC, RF, kNN)
-- 🧠 Build **CNN-based deep learning** pipelines
-- 🔗 Use **ensembling techniques** (voting, stacking) for better accuracy
-- ⚡ Compare **model performance** with and without reduction
-- 🧪 Learn through **applied research**
+| Technique                    | Observation                                                                 |
+|-----------------------------|-----------------------------------------------------------------------------|
+| **PCA + SVC**                | Achieved strong performance (~97.5% val, 97.46% Kaggle). Great for clean, low-res grayscale digits. |
+| **Autoencoder + MLP**        | Comparable to PCA but not significantly better. Useful for non-linear patterns. |
+| **Image Segmentation (kMeans)** | Did not improve accuracy. Likely because MNIST digits are sparse and uniform; clustering doesn't capture meaningful segments. |
+| **Random Forest (RF)**       | Less effective than SVC. May underperform due to high-dimensional sparse input, lacks kernel flexibility. |
+| **Base CNN**                 | Outperformed classical models (99.1% val, 98.94% Kaggle). Strong baseline with minimal tuning. |
+| **CNN + Data Augmentation**  | Best overall (99.6% val, 99.38% Kaggle). Helped reduce overfitting and improved generalization. |
+| **Stacked Ensemble (SVC + RF + MLP)** | Accuracy similar to best individual model (SVC). Stacking adds robustness but not drastic gains. |
+| **Transfer Learning (TL)**   | Mixed results. Pre-trained features didn’t generalize well to small grayscale digits without careful fine-tuning. |
+
+📌 Overall, **simple PCA + SVC**, or **CNNs with augmentation**, consistently performed best for this task.
 
 ---
 
-## 🚀 Approach Overview
+## 🔍 Project Goals
+
+- Explore **PCA** and **Autoencoders**
+- Segment digits using **kMeans clustering**
+- Compare **SVC, RF, CNN, MLP**
+- Implement **data augmentation**
+- Apply **ensemble learning**
+- Track performance via visual reports
+
+---
+
+## ⚙️ Approach Outline
 
 ```text
-1. Data Exploration
+1. Data Exploration & Visualization
 2. Dimensionality Reduction (PCA, Autoencoders)
-3. Clustering / Segmentation (kMeans on pixels/features)
-4. Traditional ML Models (SVC, RF)
-5. CNN-based Deep Learning Models
+3. Clustering (kMeans)
+4. Classical ML (SVC, RF)
+5. Deep Learning (CNN, MLP)
 6. Data Augmentation
-7. Ensemble Strategies (Voting, Stacking)
-8. Evaluation, Visualization, Saving Outputs
+7. Ensemble Techniques
+8. Evaluation & Visualization
 ```
 
-## 📊 Dimensionality Reduction Techniques
+## 📉 Dimensionality Reduction
 
-### 🟢 PCA
-- Reduce dimensionality while retaining **95–98% variance**.
-- **Benefit**: Speeds up training for traditional ML models.
-
-### 🔵 Autoencoders
-- Capture **non-linear feature representations**.
-- **Benefit**: Often better than PCA for complex data.
+| Technique    | Highlights                       |
+|--------------|----------------------------------|
+| **PCA**      | Linear, variance-based           |
+| **Autoencoder** | Non-linear, learned compression |
 
 ---
 
-## 🧩 Image Segmentation Strategy
+## 📦 Image Segmentation (Clustering)
 
-We experiment with:
-
-- **k-Means Clustering** on flattened pixel space or on extracted CNN features.
-- Represent each image with **cluster memberships** or **cluster-based statistics**.
-- Save transformed features to `.npy` or `.pkl` files for reuse.
+- Applied **kMeans clustering** to images
+- Used **cluster membership** as additional features for ML models
+- Selected optimal `k` using the **Elbow Method**
 
 ---
 
-## 🤖 Machine Learning Models
+## 🧠 Machine Learning Models
 
-| Model              | Input Type        | Notes                            |
-|-------------------|-------------------|----------------------------------|
-| **SVC**            | PCA / clustered   | Good baseline for clean data     |
-| **Random Forest**  | PCA / clustered   | Handles noise well               |
-| **CNN**            | Raw + augmented   | End-to-end learning              |
-| **Autoencoder + ML**| Compressed vector | Dimensionality-aware combo       |
-
----
-
-## 🧬 Data Augmentation (for CNNs)
-
-- **Techniques**: Rotation, shifting, zooming, flipping  
-- **Libraries**: `ImageDataGenerator`, `Albumentations`
+| Model              | Input Features         | Remarks                          |
+|--------------------|------------------------|----------------------------------|
+| **SVC**            | PCA, Segmentation      | High-performing on reduced dims |
+| **Random Forest**  | PCA                    | Robust and interpretable         |
+| **MLP**            | Autoencoded features   | Competitive with CNN             |
+| **CNN (Baseline)** | Raw                    | Strong baseline performance      |
+| **CNN + Augmentation** | Augmented raw      | Best performance observed        |
 
 ---
 
-## 🧠 Ensemble Techniques
+## 🧪 Data Augmentation
 
-### ✅ Soft Voting
-- Blend predictions using **average of probabilities**.
+- **Techniques Used**:
+  - Rotation  
+  - Zoom  
+  - Shifting  
 
-### ✅ Stacking
-- Use outputs of base models as input to a **meta-model** (e.g., Logistic Regression).
+- **Tool**: `ImageDataGenerator` (Keras)
+
+- **Impact**:
+  - Reduced overfitting  
+  - Improved generalization  
 
 ---
 
-## 📈 Evaluation Metrics
+## 🤝 Ensemble Methods
 
-- ✅ Accuracy on test set  
-- ✅ Confusion matrix  
-- ✅ Per-class performance  
-- ✅ Training time vs performance comparison
+- **Soft Voting**:
+  - Combines predictions using **average of class probabilities**
+
+- **Stacking**:
+  - Base models: `SVC`, `RF`, `MLP`  
+  - Meta-model: `GradientBoostClassifier`
+
+---
+
+## 🧪 Evaluation Strategy
+
+- 📈 Accuracy tracking on validation & Kaggle leaderboard  
+- 🧩 Confusion matrix visualized for best models  
+- 🔍 Inspection of **misclassified examples** (plotted for CNN)  
+- ⏱️ Comparison of **training time vs performance**
 
 ---
 
@@ -156,13 +197,13 @@ digit-recognizer/
 
 | Experiment                       | Status | Notes                                |
 |----------------------------------|--------|--------------------------------------|
-| Baseline CNN                     | ⬜️     |                                      |
-| PCA + SVC                        | ⬜️     | Try 95% and 98% retained variance    |
-| PCA + RF                         | ⬜️     | Check for overfitting                |
-| Autoencoder + SVC                | ⬜️     | Compare vs PCA                       |
-| kMeans Cluster Features + ML     | ⬜️     | Convert clusters into feature sets   |
-| CNN with Augmentation            | ⬜️     | Improve generalization               |
-| Stacked Model (SVC+RF+CNN)       | ⬜️     | Final ensemble                       |
+| Baseline CNN                     | ✅     |                                      |
+| PCA + SVC                        | ✅     | Try 95% and 98% retained variance    |
+| PCA + RF                         | ✅     | Check for overfitting                |
+| Autoencoder + SVC                | ✅     | Compare vs PCA                       |
+| kMeans Cluster Features + ML     | ✅     | Convert clusters into feature sets   |
+| CNN with Augmentation            | ✅     | Improve generalization               |
+| Stacked Model (SVC+RF+CNN)       | ✅     | Final ensemble                       |
 
 ---
 
