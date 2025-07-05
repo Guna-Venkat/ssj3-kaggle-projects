@@ -18,7 +18,7 @@
 | Base CNN                   | 99.10%       | 98.94%       |
 | CNN + Augmentation         | **99.60%**   | **99.38%**   |
 
-> 📌 Currently best score: **0.99332** (Augmented CNN + Transfer Learning)
+> 📌 Currently best score: **0.99332** (Augmented CNN + Transfer Learning) [stands at **192** out of **2.3k**]
 
 ---
 
