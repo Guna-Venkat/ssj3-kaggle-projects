@@ -1,7 +1,3 @@
-Model,Accuracy,Training Time (s),Report Path,Model Path
-svc_95,0.9764285714285714,344.8692831993103,outputs/reports/classification_report_svc_95.json,outputs/models/svc_95.joblib
-svc_98,0.9764285714285714,346.5661942958832,outputs/reports/classification_report_svc_98.json,outputs/models/svc_98.joblib
-rf_95,0.9478571428571428,363.17651176452637,outputs/reports/classification_report_rf_95.json,outputs/models/rf_95.joblib
-rf_98,0.9478571428571428,367.9124927520752,outputs/reports/classification_report_rf_98.json,outputs/models/rf_98.joblib
-mlp,0.9588095238095238,405.1732540130615,outputs/reports/classification_report_mlp.json,outputs/models/mlp.joblib
-stack_svc_rf_mlp,0.9747619047619047,900.0,outputs/reports/classification_report_stack_svc_rf_mlp.json,outputs/models/stack_svc_rf_mlp.joblib
+version https://git-lfs.github.com/spec/v1
+oid sha256:6d1783c4fb52187b0b8e406db541b17fd73cb5446a710929e00e4d6ce9a33e7c
+size 798
