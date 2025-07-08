@@ -9,6 +9,8 @@
 Welcome to **Popcorn NLP Sentiment Classification**, a classic binary text classification problem from the **IMDB Movie Review** dataset.  
 This repository contains an end-to-end exploration using both traditional NLP and modern deep learning pipelines — part of the **SSJ3-ML-Journey**.
 
+This competition is based on the **Word2Vec NLP tutorial** developed at Kaggle, which explores semantic relationships in text using efficient deep-learning-inspired techniques. The dataset and challenge are grounded in real-world movie review sentiment analysis.
+
 ---
 
 ## 🎯 Objective
@@ -22,18 +24,39 @@ You’ll classify reviews using:
 
 ---
 
+## 🧾 Tutorial Background
+
+This competition demonstrates how **Word2Vec** can be used for sentiment classification, using an IMDB movie review dataset.  
+While deep learning models such as RNNs or DNNs can capture rich patterns in text, **Word2Vec** provides a **computationally efficient** way to model word semantics. This tutorial helps beginners understand:
+
+- Basic NLP preprocessing (Part 1)
+- Word2Vec training & usage (Parts 2 & 3)
+- Exploratory rather than prescriptive modeling
+
+---
+
 ## 📁 Dataset Overview
+
+The dataset contains **100,000 IMDB reviews**, split into labeled, unlabeled, and test sets.
 
 | File                  | Description                              |
 |-----------------------|------------------------------------------|
-| `train.tsv`           | Contains `id`, `review`, and `sentiment` |
-| `test.tsv`            | Contains `id` and `review`               |
-| `sampleSubmission.csv`| Template for final predictions            |
+| `labeledTrainData.tsv`| 25,000 labeled training samples (`id`, `review`, `sentiment`) |
+| `testData.tsv`        | 25,000 test samples (`id`, `review`) — to predict sentiment |
+| `unlabeledTrainData.tsv` | 50,000 additional unlabeled reviews for Word2Vec training |
+| `sampleSubmission.csv`| Submission template for test predictions |
 
-- Reviews are raw HTML/text strings from IMDB movie reviews.
-- **Labels**:  
-  - `0` = Negative  
-  - `1` = Positive
+### 📌 Sentiment Labels
+- `0` = Negative review (IMDB rating < 5)
+- `1` = Positive review (IMDB rating ≥ 7)
+
+> Each review is multi-paragraph, and **no movie appears in both train and test sets**.
+
+---
+
+## 📊 Evaluation Metric
+
+- 🧮 **AUC (Area Under ROC Curve)** — model performance is judged based on this metric.
 
 ---
 
