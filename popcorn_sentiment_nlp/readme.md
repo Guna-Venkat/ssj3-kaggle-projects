@@ -89,10 +89,14 @@ popcorn_sentiment_nlp/
 │   ├── test.tsv
 │   ├── sampleSubmission.csv
 ├── notebooks/
-│   ├── 01_eda_preprocessing.ipynb
-│   ├── 02_tfidf_logreg_nb_svm.ipynb
-│   ├── 03_transformer_finetune.ipynb  (optional)
-│   ├── 04_visualizations.ipynb
+│   ├── 01_clean_text_lemmatize.ipynb
+│   ├── 02_train_word2vec.ipynb
+│   ├── 03_glove_fasttext_compare.ipynb 
+│   ├── 04_tfidf_ml_models.ipynb
+│   ├── 05_nn_on_embeddings.ipynb
+│   ├── 06_rnn_lstm.ipynb
+│   ├── 07_bert_transformer.ipynb
+│   ├── 08_error_analysis.ipynb
 ├── models/                      # Trained model files (.pkl)
 ├── outputs/                     # Submission files, reports
 ├── visualizations/              # Wordclouds, confusion matrices
