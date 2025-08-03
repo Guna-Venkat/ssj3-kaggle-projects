@@ -176,7 +176,7 @@ amazon_review_nlp/
 ## ✍️ Author
 
 - **Name**: Guna Venkat Doddi  
-- **Project**: Part of `SSJ3-NLP-Projects` repository  
+- **Project**: Part of `SSJ3-Kaggle-Projects` repository  
 - **Contact**: [![GitHub - Guna Venkat Doddi](https://img.shields.io/badge/GitHub-Guna--Venkat--Doddi-black?logo=github&style=flat-square)](https://github.com/Guna-Venkat)
 
 ---
